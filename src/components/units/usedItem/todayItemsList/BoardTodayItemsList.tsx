@@ -54,7 +54,7 @@ const LayoutTodayItems = styled.div`
    box-shadow: 1px 2px 3px #c4c4c4;
 `;
 
-const ItemWrapper = styled.div`
+const ItemWrapper = styled.div<{ isOneItem: boolean }>`
    width: 100%;
    height: 100%;
    display: flex;

@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import CommenWriteUI from "./CommentWrite.presenter";
@@ -9,19 +9,26 @@ import {
 } from "./CommentWrite.queries";
 import { Modal } from "antd";
 
+interface IMyVariables {
+   writer?: string;
+   password?: string;
+   rating?: number;
+   contents?: string;
+}
+
 export default function CommenWrite(props) {
    const router = useRouter();
 
    const [writer, setWriter] = useState("");
    const [password, setPassword] = useState("");
    const [comment, setComment] = useState("");
-   const [rating, setRating] = useState();
+   const [rating, setRating] = useState<number>();
 
    const [createComment] = useMutation(CREATE_COMMENT);
    const [updateComment] = useMutation(UPDATE_COMMENT);
 
    const onClickComment = async () => {
-      const myVariables = {};
+      const myVariables: IMyVariables = {};
       if (writer) myVariables.writer = writer;
       if (password) myVariables.password = password;
 
@@ -62,7 +69,7 @@ export default function CommenWrite(props) {
 
    const onClickUpdateComment = async () => {
       console.log(props.isEditId);
-      const myVariables = {};
+      const myVariables: IMyVariables = {};
       if (rating) myVariables.rating = rating;
       if (comment) myVariables.contents = comment;
       if (!myVariables.rating && !myVariables.contents)

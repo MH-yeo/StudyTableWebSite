@@ -6,7 +6,6 @@ import {
    FETCH_USEDITEM_IPICKED,
    FETCH_USEDITEM_ISOLD,
    FETCH_COUNTS_IPICKED,
-   FETCH_COUNTS_ISOLD,
 } from "./MyPageMyShop.queries";
 
 let soldCounts = 0;
@@ -22,15 +21,12 @@ export default function MyPageMyShop() {
       },
    });
    // **올린 상품 전체 갯수계산**
-   const { data: soldData, refetch: soldRefetch } = useQuery(
-      FETCH_USEDITEM_ISOLD,
-      {
-         variables: {
-            search: "",
-            page: serachPage,
-         },
-      }
-   );
+   const { data: soldData } = useQuery(FETCH_USEDITEM_ISOLD, {
+      variables: {
+         search: "",
+         page: serachPage,
+      },
+   });
 
    useEffect(() => {
       // 내가올린상품 serachPage  돌려줌
@@ -42,15 +38,12 @@ export default function MyPageMyShop() {
       }
    });
 
-   const { data: finalSoldData, refetch: finalSoldRefetch } = useQuery(
-      FETCH_USEDITEM_ISOLD,
-      {
-         variables: {
-            search: "",
-            page: serachPage - 1,
-         },
-      }
-   );
+   const { data: finalSoldData } = useQuery(FETCH_USEDITEM_ISOLD, {
+      variables: {
+         search: "",
+         page: serachPage - 1,
+      },
+   });
    useEffect(() => {
       // 갯수 새줌
       const lastSoldCount = finalSoldData?.fetchUseditemsISold.length;
@@ -66,8 +59,7 @@ export default function MyPageMyShop() {
    );
    // **올린 상품 전체 갯수계산**
 
-   const { data: pickedItemCounts, refetch: pickedCountsRefetch } =
-      useQuery(FETCH_COUNTS_IPICKED);
+   const { data: pickedItemCounts } = useQuery(FETCH_COUNTS_IPICKED);
 
    const onClickToDetail = (el) => () => {
       if (el?.deletedAt) return 1;

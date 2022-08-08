@@ -8,7 +8,7 @@ import {
 
 export function useAuth() {
    const router = useRouter();
-   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+   const [accessToken] = useRecoilState(accessTokenState);
    const aaa = useRecoilValueLoadable(restoreAccessTokenLodable);
 
    useEffect(() => {

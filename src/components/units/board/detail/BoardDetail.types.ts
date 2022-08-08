@@ -6,4 +6,5 @@ export interface IBoardDetailUI {
    onClickDisLike: () => void;
    data?: any;
    commentData?: any;
+   fetchMore: () => void;
 }

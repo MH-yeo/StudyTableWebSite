@@ -15,11 +15,11 @@ export const Wrapper = styled.div`
    flex-direction: column;
    align-items: center;
 `;
-export const SideWrapper = styled.div`
+export const SideWrapper = styled.div<{ isThreeItem: boolean }>`
    height: 700px;
    display: flex;
    flex-direction: column;
-   justify-content: ${(props: any) =>
+   justify-content: ${(props) =>
       props.isThreeItem ? "space-between" : "none"};
 `;
 export const ItemsWrapper = styled.div`
@@ -33,7 +33,6 @@ export const ItemsWrapper = styled.div`
 export const Item = styled.div`
    display: flex;
    background-color: white;
-   /* border-radius: 10px; */
    border-bottom: 1px solid #bdbdbd;
    padding: 20px 15px;
    :hover {

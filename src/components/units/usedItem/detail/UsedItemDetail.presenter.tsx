@@ -1,11 +1,11 @@
 import * as S from "./UsedItemDetail.styles";
-import { IBoardDetailUI } from "./UsedItemDetail.types";
+import { IUsedItemDetailUI } from "./UsedItemDetail.types";
 import DOMPurify from "dompurify";
 import { numberWithCommas } from "../../../../commons/utilities/numberWithCommas";
 import QuestionWrite from "../../question/write/QuestionWrite.container";
 import QuestionList from "../../question/list/QuestionList.conatiner";
 
-export default function UsedItemDetailUI(props: IBoardDetailUI) {
+export default function UsedItemDetailUI(props: IUsedItemDetailUI) {
    return (
       <S.Background>
          <S.Wrapper>

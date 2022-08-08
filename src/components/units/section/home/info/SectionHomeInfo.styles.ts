@@ -24,7 +24,7 @@ export const SubPWrapper = styled.div`
    flex-direction: column;
    align-items: center;
 `;
-export const SubP = styled.p`
+export const SubP = styled.p<{ info: boolean }>`
    margin: 0;
    font-size: 24px;
    margin-right: 50px;
@@ -68,7 +68,7 @@ const fadeOut = keyframes`
   }
 `;
 
-export const MyImgWrapper = styled.div`
+export const MyImgWrapper = styled.div<{ info: boolean }>`
    width: 475px;
    display: flex;
    justify-content: center;

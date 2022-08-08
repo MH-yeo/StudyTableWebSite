@@ -63,7 +63,7 @@ export const ResetButton = styled.button`
 export const DivWidth100 = styled.div`
    width: 100%;
 `;
-export const PickedItemMenu = styled.div`
+export const PickedItemMenu = styled.div<{ menuState: boolean }>`
    width: 100px;
    display: flex;
    align-items: center;
@@ -74,8 +74,8 @@ export const PickedItemMenu = styled.div`
       font-weight: 700;
       opacity: 0.6;
    }
-   font-weight: ${(props: any) => (props.menuState ? "700" : "500")};
-   color: ${(props: any) => (props.menuState ? "black" : "#c6c6c6")};
+   font-weight: ${(props) => (props.menuState ? "700" : "500")};
+   color: ${(props) => (props.menuState ? "black" : "#c6c6c6")};
 `;
 export const LogOutMenu = styled.div`
    width: 100px;
@@ -88,7 +88,7 @@ export const LogOutMenu = styled.div`
    :hover {
       font-weight: 700;
    }
-   font-weight: ${(props: any) => (props.menuState ? "700" : "500")};
+   font-weight: 500;
 `;
 export const MenuTitle = styled.span`
    margin-left: 10px;

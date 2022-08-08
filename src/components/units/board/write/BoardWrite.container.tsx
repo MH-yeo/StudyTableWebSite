@@ -117,7 +117,6 @@ export default function BoardWrite(props: IBoardWrite) {
       if (address) myVariables.updateBoardInput.boardAddress = {};
       if (address) myVariables.updateBoardInput.boardAddress.address = address;
       if (addressDetail) myVariables.updateBoardInput.boardAddress = {};
-      addressDetail;
       if (addressDetail)
          myVariables.updateBoardInput.boardAddress.addressDetail =
             addressDetail;

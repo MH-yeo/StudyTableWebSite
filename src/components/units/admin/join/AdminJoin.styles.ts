@@ -1,5 +1,5 @@
 import styled from "@emotion/styled/";
-import { Button, Input } from "antd";
+import { Button } from "antd";
 import { MailOutlined } from "@ant-design/icons";
 
 export const Wrapper = styled.div`
@@ -64,7 +64,7 @@ export const Information = styled.div`
 export const FormWrapper = styled.div`
    font-size: 16px;
 `;
-export const EmailWrapper = styled.div`
+export const EmailWrapper = styled.div<{ start: boolean }>`
    opacity: ${(props) => (props.start ? "1" : "0")};
    max-height: ${(props) => (props.start ? "700px" : "0")};
    overflow: hidden;
@@ -73,7 +73,7 @@ export const EmailWrapper = styled.div`
    font-size: 16px;
 `;
 
-export const EmailInput = styled.input`
+export const EmailInput = styled.input<{ isValidEmail: boolean }>`
    width: 100%;
    border: none;
    outline: none;
@@ -82,18 +82,18 @@ export const EmailInput = styled.input`
    font-size: 20px;
    margin-bottom: 10px;
 `;
-export const EmailText = styled.div`
+export const EmailText = styled.div<{ isValid: boolean }>`
    margin-left: 2px;
    color: ${(props) => (props.isValid ? "#00a1ff" : "#363a3c")};
 `;
 
-export const FormInputWrapper = styled.div`
+export const FormInputWrapper = styled.div<{ next: boolean }>`
    padding-top: 20px;
    opacity: ${(props) => (props.next ? "1" : "0")};
    max-height: ${(props) => (props.next ? "400px" : "0")};
    /* transition: all 0.25s ease; */
 `;
-export const FormInput = styled.input`
+export const FormInput = styled.input<{ isValid: boolean }>`
    width: 100%;
    border: none;
    outline: none;

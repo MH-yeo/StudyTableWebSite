@@ -6,7 +6,7 @@ import {
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import { createUploadLink } from "apollo-upload-client";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 import { useRecoilState, useRecoilValueLoadable } from "recoil";
 import {
    accessTokenState,
@@ -14,7 +14,7 @@ import {
 } from "../../../commons/store";
 import getAccessToken from "../../../commons/utilities/getAccessToken";
 
-export default function ApolloSetting(props) {
+export default function ApolloSetting(props: { children: ReactNode }) {
    const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
    const aaa = useRecoilValueLoadable(restoreAccessTokenLodable);
 

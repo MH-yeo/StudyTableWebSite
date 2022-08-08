@@ -28,7 +28,7 @@ export default function AdminJoinUI(props) {
          </S.Information>
          <S.FormWrapper>
             <form>
-               <S.EmailWrapper start={+props.start}>
+               <S.EmailWrapper start={props.start}>
                   <S.EmailInput
                      ref={props.emailInputRef}
                      value={props.email}
@@ -51,7 +51,7 @@ export default function AdminJoinUI(props) {
                      />
                   )}
                </S.EmailWrapper>
-               <S.FormInputWrapper next={+props.next}>
+               <S.FormInputWrapper next={props.next}>
                   <h2>회원가입을 진행합니다.</h2>
                   <Controller
                      name="name"

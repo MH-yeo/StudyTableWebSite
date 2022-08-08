@@ -12,7 +12,6 @@ import {
    PICK_USEDITEM,
    POINT_BUYING,
 } from "./UsedItemDetail.queries";
-import { IPickedItems } from "./UsedItemDetail.types";
 
 declare const window: typeof globalThis & {
    kakao: any;
@@ -31,7 +30,7 @@ export default function UsedItemDetail(props) {
    const { data } = useQuery(FETCH_USEDITEM, {
       variables: { useditemId: router.query.number },
    });
-   const { data: pickedItems, refetch } = useQuery(FETCH_USEDITEM_IPICKED, {
+   const { data: pickedItems } = useQuery(FETCH_USEDITEM_IPICKED, {
       variables: {
          search: "",
       },
@@ -155,7 +154,7 @@ export default function UsedItemDetail(props) {
 
    const excuteBuying = async () => {
       try {
-         const result = await buyingUseitem({
+         await buyingUseitem({
             variables: {
                useritemId: router.query.number,
             },
@@ -172,11 +171,7 @@ export default function UsedItemDetail(props) {
          content: text,
       });
    };
-   const info = (text) => {
-      Modal.info({
-         title: text,
-      });
-   };
+
    const errorModal = (text) => {
       Modal.error({
          title: "에러 메세지",
@@ -213,18 +208,3 @@ export default function UsedItemDetail(props) {
       </>
    );
 }
-
-// try {
-//    setIsEditId(event.target.id);
-//    await updateComment({
-//       variables: {
-//          password,
-//          boardCommentId: event.target.id,
-//          updateBoardCommentInput: myVariables,
-//       },
-//    });
-//    alert("삭제되었습니다.");
-//    router.push(`/routed/${router.query.number}`);
-// } catch (error: any) {
-//    alert(`error message: ${error.message}`);
-// }

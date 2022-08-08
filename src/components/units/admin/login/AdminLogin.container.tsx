@@ -9,9 +9,9 @@ import { LOGIN_USER } from "./AdminLogin.queries";
 
 export default function AdminLogin() {
    const router = useRouter();
-   const [email, setEmail] = useState();
-   const [password, setPassWrod] = useState();
-   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+   const [email, setEmail] = useState("");
+   const [password, setPassWrod] = useState("");
+   const [, setAccessToken] = useRecoilState(accessTokenState);
    const [loginUser] = useMutation(LOGIN_USER);
 
    const inputRef: any = useRef();

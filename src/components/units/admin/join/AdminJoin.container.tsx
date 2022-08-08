@@ -29,8 +29,8 @@ export default function AdminJoin() {
    const [email, setEmail] = useState("");
    const [isValidEmail, setIsValidEmail] = useState(false);
    const [next, setNext] = useState(false);
-   const emailInputRef = useRef();
-   const nameInputRef = useRef();
+   const emailInputRef = useRef(null);
+   const nameInputRef = useRef(null);
    const [createUser] = useMutation(CREATE_USER);
    const router = useRouter();
 

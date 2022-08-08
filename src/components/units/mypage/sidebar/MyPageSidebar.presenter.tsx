@@ -1,6 +1,5 @@
 import {
    DollarOutlined,
-   HeartOutlined,
    LogoutOutlined,
    ShoppingCartOutlined,
    UserOutlined,

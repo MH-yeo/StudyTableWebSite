@@ -1,4 +1,4 @@
-export const TimeRecreate = (createdAt) => {
+export const TimeRecreate = (createdAt: Date) => {
    const oldDate = new Date(createdAt);
 
    const year = String(oldDate.getFullYear());

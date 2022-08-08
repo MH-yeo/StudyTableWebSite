@@ -3,12 +3,7 @@ import { useRouter } from "next/router";
 import SectionHomeFormUI from "./SectionHomeForm.presenter";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import {
-   collection,
-   getFirestore,
-   addDoc,
-   getDocs,
-} from "firebase/firestore/lite";
+import { collection, getFirestore, addDoc } from "firebase/firestore/lite";
 import { firebaseApp } from "../../../../../../pages/_app";
 import { useForm } from "react-hook-form";
 
@@ -34,9 +29,6 @@ export default function SectionHomeForm(props) {
          checkbox: false,
       },
    });
-   const onChangePhoneNum = (e) => {
-      setPhoneNum(e.target.value);
-   };
 
    const onClickSubmit = async (data) => {
       console.log(data);
@@ -71,7 +63,6 @@ export default function SectionHomeForm(props) {
    return (
       <>
          <SectionHomeFormUI
-            onChangePhoneNum={onChangePhoneNum}
             onClickSubmit={onClickSubmit}
             onClickToPrivacyPolicy={onClickToPrivacyPolicy}
             bottomRef={props.bottomRef}

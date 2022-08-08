@@ -50,6 +50,9 @@ export default function QuestionListUI(props) {
                         <QuestionListComponent
                            el={el}
                            isEditId={props.isEditId}
+                           isReplyId={props.isReplyId}
+                           commentData={props.commentData}
+                           onClickUnfold={props.onClickUnfold}
                            isEditAnswerId={props.isEditAnswerId}
                            onClickToReply={props.onClickToReply}
                            onClickToDelete={props.onClickToDelete}

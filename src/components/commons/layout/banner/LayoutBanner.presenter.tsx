@@ -1,6 +1,4 @@
 import * as S from "./LayoutBanner.styles";
-import Slider from "react-slick";
-import { settings } from "./LayoutBanner.styles";
 
 export default function LayoutBannerUI(props) {
    return (

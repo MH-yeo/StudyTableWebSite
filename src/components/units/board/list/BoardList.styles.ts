@@ -108,6 +108,6 @@ export const Write = styled(Button)`
    line-height: 24px;
    border-radius: 5px;
 `;
-export const Word = styled.span`
+export const Word = styled.span<{ isMatched: boolean }>`
    color: ${(props: any) => (props.isMatched ? "red" : "black")};
 `;

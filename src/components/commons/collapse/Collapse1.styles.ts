@@ -9,7 +9,7 @@ export const FaqWrapper = styled.div`
    cursor: pointer;
 `;
 
-export const Text = styled.div`
+export const Text = styled.div<{ toggle: boolean }>`
    opacity: ${(props) => (props.toggle ? "1" : "0")};
    max-height: ${(props) => (props.toggle ? "75px" : "0")};
    overflow: hidden;
@@ -18,14 +18,14 @@ export const Text = styled.div`
    padding: 0px 10px;
    font-size: 16px;
 `;
-export const Myh4 = styled.h4`
+export const Myh4 = styled.h4<{ toggle: boolean }>`
    color: #878d91;
    margin-bottom: 0px;
    padding: 16px 0px;
    font-weight: ${(props) => (props.toggle ? "bold" : "500")};
 `;
 
-export const LeftArrow = styled(LeftOutlined)`
+export const LeftArrow = styled(LeftOutlined)<{ toggle: boolean }>`
    font-size: 18px;
    transform: ${(props) => (props.toggle ? "rotate(-90deg)" : "rotate(0)")};
    transition: all 0.25s ease;

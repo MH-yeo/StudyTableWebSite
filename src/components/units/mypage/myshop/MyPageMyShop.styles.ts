@@ -31,7 +31,7 @@ export const TableBody = styled.div`
    display: flex;
    flex-direction: column;
 `;
-export const TableRow = styled.tr`
+export const TableRow = styled.tr<{ isDelete: string }>`
    display: flex;
    flex-direction: row;
    border-top: 2px solid #eff0ed !important;
@@ -115,7 +115,7 @@ export const Write = styled(Button)`
    line-height: 24px;
    border-radius: 5px;
 `;
-export const Word = styled.span`
+export const Word = styled.span<{ isMatched: boolean }>`
    color: ${(props: any) => (props.isMatched ? "red" : "black")};
 `;
 export const MyShopMenu = styled.div`
@@ -125,7 +125,7 @@ export const MyShopMenu = styled.div`
    font-size: 15px;
    align-items: center;
 `;
-export const Picked = styled.div`
+export const Picked = styled.div<{ isPickedMenu: boolean }>`
    color: ${(props: any) => (props.isPickedMenu ? "black" : "#c6c6c6")};
    cursor: pointer;
    :hover {
@@ -137,7 +137,7 @@ export const SectionLine = styled.div`
    border-left: 1px solid gray;
    margin: 0px 10px;
 `;
-export const MyItem = styled.div`
+export const MyItem = styled.div<{ isPickedMenu: boolean }>`
    color: ${(props: any) => (props.isPickedMenu ? "#c6c6c6" : "black")};
    cursor: pointer;
    :hover {

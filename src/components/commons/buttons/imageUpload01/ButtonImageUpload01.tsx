@@ -24,6 +24,7 @@ const PlusIcon = styled.div`
    justify-content: center;
    align-items: center;
 `;
+
 export default function ButtonImageUpload01({ onClickImage }) {
    return (
       <MyUploadButton onClick={onClickImage}>

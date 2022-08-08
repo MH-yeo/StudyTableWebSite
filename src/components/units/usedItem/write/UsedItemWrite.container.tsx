@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, useEffect, useMemo } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/router";
 import {
@@ -6,7 +6,7 @@ import {
    UPDATE_USEDITEM,
    UPLOAD_FILE,
 } from "./UsedItemWrite.queries";
-import { IBoardWrite, IMyvariables } from "./UsedItemWrite.types";
+import { IUsedItemWrite } from "./UsedItemWrite.types";
 import BoardWriteUI from "./UsedItemWrite.presenter";
 import DaumPostcode from "react-daum-postcode";
 import { Modal } from "antd";
@@ -17,7 +17,7 @@ declare const window: typeof globalThis & {
    kakao: any;
 };
 
-export default function UsedItemWrite(props: IBoardWrite) {
+export default function UsedItemWrite(props: IUsedItemWrite) {
    const router = useRouter();
    const [postVisible, setPostVisible] = useState(false);
    const [createUseditem] = useMutation(CREATE_USEDITEM);
@@ -138,11 +138,6 @@ export default function UsedItemWrite(props: IBoardWrite) {
    };
 
    const update = async (data) => {
-      const myVariables: IMyvariables = {
-         boardId: router.query.number,
-         updateBoardInput: {},
-      };
-
       try {
          await updateUseditem({
             variables: {
@@ -219,13 +214,6 @@ export default function UsedItemWrite(props: IBoardWrite) {
          title: text,
       });
    };
-
-   const info = (text) => {
-      Modal.info({
-         title: text,
-      });
-   };
-   console.log("this is url", imageUrl);
    return (
       <>
          <BoardWriteUI

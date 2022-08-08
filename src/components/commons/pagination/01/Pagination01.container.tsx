@@ -3,7 +3,7 @@ import Pagination01UI from "./Pagination01.presenter";
 
 export default function Pagination01(props) {
    const [startPage, setStartPage] = useState(1);
-   const [activePage, setActivePage] = useState(1);
+   const [, setActivePage] = useState(1);
 
    const lastPage = Math.ceil(props.boardCounts / 10);
 

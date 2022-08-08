@@ -103,18 +103,3 @@ export default function BoardDetail(props) {
       />
    );
 }
-
-// try {
-//    setIsEditId(event.target.id);
-//    await updateComment({
-//       variables: {
-//          password,
-//          boardCommentId: event.target.id,
-//          updateBoardCommentInput: myVariables,
-//       },
-//    });
-//    alert("삭제되었습니다.");
-//    router.push(`/routed/${router.query.number}`);
-// } catch (error: any) {
-//    alert(`error message: ${error.message}`);
-// }

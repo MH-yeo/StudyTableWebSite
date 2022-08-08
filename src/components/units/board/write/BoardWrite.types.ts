@@ -4,6 +4,10 @@ export interface IBoardWriteUI {
    onChangePw: (event: any) => void;
    onChangeTitle: (event: any) => void;
    onChangeContents: (event: any) => void;
+   onChangeAddressDetail: (event: any) => void;
+   onChangeFile: (event: any) => void;
+   onClickToYouTubeModal: () => void;
+   onClickToPostModal: () => void;
    submit: () => void;
    update: () => void;
    isEdit: boolean;
@@ -12,6 +16,13 @@ export interface IBoardWriteUI {
    errPw?: string;
    errTitle?: string;
    errContents?: string;
+   writer?: string;
+   title?: string;
+   youtubeUrl?: string;
+   imageUrl?: string;
+   zipcode?: string;
+   address?: string;
+   addressDetail?: string;
 }
 
 export interface IBoardWrite {
@@ -30,5 +41,7 @@ export interface IMyvariables {
          address?: String;
          addressDetail?: String;
       };
+      youtubeUrl?: string;
+      images?: [string];
    };
 }

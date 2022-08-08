@@ -5,7 +5,7 @@ import LayoutNavigationUI from "./LayoutNavigation.presenter";
 
 export default function LayoutNavigation(props) {
    const router = useRouter();
-   const [accessToken, setAccessToken] = useRecoilState(accessTokenState);
+   const [accessToken] = useRecoilState(accessTokenState);
 
    const onClickToHome = () => {
       router.push("/");

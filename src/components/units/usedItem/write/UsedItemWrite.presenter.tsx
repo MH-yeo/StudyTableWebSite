@@ -3,7 +3,6 @@ import { Controller } from "react-hook-form";
 import dynamic from "next/dynamic";
 import ButtonImageUpload01 from "../../../commons/buttons/imageUpload01/ButtonImageUpload01";
 import * as S from "./UsedItemWrite.styles";
-import { IBoardWriteUI } from "./UsedItemWrite.types";
 import styled from "@emotion/styled";
 import { useRef } from "react";
 import { inputPriceFormat } from "../../../../commons/utilities/inputPriceFormat";
@@ -28,7 +27,7 @@ const MyReactQuill = styled(ReactQuill)`
    }
 `;
 
-export default function UsedItemWriteUI(props: IBoardWriteUI) {
+export default function UsedItemWriteUI(props) {
    const fileRef = useRef<HTMLInputElement>(null);
    const onClickImage = () => {
       fileRef.current?.click();
@@ -164,7 +163,7 @@ export default function UsedItemWriteUI(props: IBoardWriteUI) {
                                  return false;
                               } else if (!props.imageUrl[i]) {
                                  return true;
-                              }
+                              } else return false;
                            })}
                      </S.ImageButtonWrapper>
                   </S.ImageWrapper>

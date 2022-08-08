@@ -1,4 +1,3 @@
-import { FileImageOutlined } from "@ant-design/icons";
 import { useRef } from "react";
 import * as S from "./BoardWrite.styles";
 import { IBoardWriteUI } from "./BoardWrite.types";

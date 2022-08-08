@@ -9,17 +9,18 @@ import { useState } from "react";
 import PointSelect from "../../../commons/modal/pointSelect/PointSelect";
 import MyPageSidebarUI from "./MyPageSidebar.presenter";
 import { Modal } from "antd";
-import { useRouter } from "next/router";
+
+declare const window: typeof globalThis & {
+   IMP: any;
+};
 
 export default function MyPageSidebar() {
    const { data } = useQuery(FETCH_USER_LOGGEDIN);
    const [userLogOut] = useMutation(FETCH_USER_LOGOUT);
-   const [menuState, menuSetState] = useState([true, false, false]);
+   const [menuState] = useState([true, false, false]);
    const [point, setPoint] = useState(1000);
    const [isModalVisible, setIsModalVisible] = useState(false);
    const [createPoint] = useMutation(CREATE_POINT_TRANSACTION_OF_LOADING);
-
-   const router = useRouter();
 
    console.log(data?.fetchUserLoggedIn);
    const onClickToPointModal = () => {
@@ -37,7 +38,7 @@ export default function MyPageSidebar() {
             title: "로그아웃 되었습니다.",
          });
          location.replace("/");
-      } catch (e: error) {
+      } catch (e: any) {
          alert(e.message);
       }
    };
@@ -63,7 +64,7 @@ export default function MyPageSidebar() {
          async (rsp: any) => {
             // callback
             if (rsp.success) {
-               const result = await createPoint({
+               await createPoint({
                   variables: { impUid: rsp.imp_uid },
                });
 

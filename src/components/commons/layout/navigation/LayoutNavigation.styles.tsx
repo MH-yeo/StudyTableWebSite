@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const BannerNav = styled.nav`
+export const BannerNav = styled.nav<{ navColor: boolean }>`
    position: fixed;
    top: 0;
    width: 100%;
@@ -20,14 +20,14 @@ export const BannerLeft = styled.div`
    display: flex;
    align-items: center;
 `;
-export const CommunityWrapper = styled.div`
+export const CommunityWrapper = styled.div<{ navColor: boolean }>`
    width: 133px;
    height: 20px;
    color: ${(props) => (props.navColor ? "#ffffff" : "#363a3c")};
    display: flex;
    align-items: center;
 `;
-export const BannerMenu = styled.div`
+export const BannerMenu = styled.div<{ navColor: boolean }>`
    width: 400px;
    height: 20px;
    color: ${(props) => (props.navColor ? "#ffffff" : "#363a3c")};
@@ -39,7 +39,7 @@ export const Logo = styled.img`
    width: 200px;
    cursor: pointer;
 `;
-export const Mydiv = styled.div`
+export const Mydiv = styled.div<{ navColor: boolean }>`
    position: relative;
    width: 100%;
    font-size: 20px;

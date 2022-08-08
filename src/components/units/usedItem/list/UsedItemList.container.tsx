@@ -2,8 +2,7 @@ import UsedItemListUI from "./UsedItemList.presenter";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
 import { FETCH_USEDITEMS } from "./UsedItemList.queries";
-import _ from "lodash";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IClickedItems } from "./UsedItemList.types";
 
 const date = new Date();
@@ -13,7 +12,7 @@ export default function UsedItemList() {
    const router = useRouter();
    const { data, fetchMore } = useQuery(FETCH_USEDITEMS);
    const [clickedItems, setClickedItems] = useState<IClickedItems[]>([]);
-   const [keyword, setKeyword] = useState("");
+   const [keyword] = useState("");
    console.log(data);
    useEffect(() => {
       setClickedItems(JSON.parse(localStorage.getItem("clickedItems") || "[]"));
@@ -40,14 +39,6 @@ export default function UsedItemList() {
 
    const onClickToWrite = () => {
       router.push(`/useditems/new`);
-   };
-   const getDebounce = _.debounce((keyword) => {
-      refetch({ search: keyword, page: 1 });
-      setKeyword(keyword);
-   }, 500);
-
-   const onChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
-      getDebounce(e.target.value);
    };
 
    function loadFunc() {
@@ -77,7 +68,6 @@ export default function UsedItemList() {
          onClickToDetail={onClickToDetail}
          onClickToWrite={onClickToWrite}
          keyword={keyword}
-         onChangeSearch={onChangeSearch}
          loadFunc={loadFunc}
       />
    );
