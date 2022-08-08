@@ -97,7 +97,6 @@ export default function QuestionWrite(props) {
       }
    };
    const onClickUpdateQuestionAnswer = (el) => async () => {
-      console.log("this is test", el);
       const myVariables: IMyVariables = {};
       if (question) myVariables.contents = question;
       if (!myVariables.contents) return info("수정한 것이 없습니다.");

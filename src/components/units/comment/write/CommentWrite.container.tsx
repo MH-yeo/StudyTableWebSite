@@ -68,7 +68,6 @@ export default function CommenWrite(props) {
    };
 
    const onClickUpdateComment = async () => {
-      console.log(props.isEditId);
       const myVariables: IMyVariables = {};
       if (rating) myVariables.rating = rating;
       if (comment) myVariables.contents = comment;

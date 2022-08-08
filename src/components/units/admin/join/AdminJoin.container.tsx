@@ -79,7 +79,6 @@ export default function AdminJoin() {
       }
 
       const { passwordAgain, phoneNum, ...rest } = data;
-      console.log(rest);
       try {
          await createUser({
             variables: {

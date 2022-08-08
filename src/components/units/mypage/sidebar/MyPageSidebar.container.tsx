@@ -22,13 +22,8 @@ export default function MyPageSidebar() {
    const [isModalVisible, setIsModalVisible] = useState(false);
    const [createPoint] = useMutation(CREATE_POINT_TRANSACTION_OF_LOADING);
 
-   console.log(data?.fetchUserLoggedIn);
    const onClickToPointModal = () => {
       setIsModalVisible((prev) => !prev);
-   };
-
-   const onClickMenu = (e) => {
-      // e.target.id;
    };
 
    const onClickLogOut = async () => {
@@ -102,7 +97,6 @@ export default function MyPageSidebar() {
          <MyPageSidebarUI
             data={data}
             menuState={menuState}
-            onClickMenu={onClickMenu}
             onClickLogOut={onClickLogOut}
             onClickToPointModal={onClickToPointModal}
          />

@@ -31,8 +31,6 @@ export default function SectionHomeForm(props) {
    });
 
    const onClickSubmit = async (data) => {
-      console.log(data);
-
       try {
          const board = collection(getFirestore(firebaseApp), "Form");
          delete data.checkbox;

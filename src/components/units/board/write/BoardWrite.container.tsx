@@ -146,14 +146,12 @@ export default function BoardWrite(props: IBoardWrite) {
 
    const onChangeFile = async (e: ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
-      console.log(file);
 
       const isValid = checkFileValidation(file);
       if (!isValid) return;
 
       try {
          const result = await uploadFile({ variables: { file } });
-         console.log(result);
 
          setImageUrl(result.data.uploadFile.url);
       } catch (error) {

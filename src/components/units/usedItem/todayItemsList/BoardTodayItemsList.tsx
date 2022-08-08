@@ -87,7 +87,6 @@ export default function BoardTodayItemsList({ clickedItems }) {
    const onClickNext = () => {
       if (idx + 3 !== todayItemsList.length) setIdx((prev) => prev + 1);
    };
-   console.log(todayItemsList);
    return (
       <Wrapper>
          <LayoutTodayItems>

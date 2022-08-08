@@ -13,7 +13,6 @@ export default function UsedItemList() {
    const { data, fetchMore } = useQuery(FETCH_USEDITEMS);
    const [clickedItems, setClickedItems] = useState<IClickedItems[]>([]);
    const [keyword] = useState("");
-   console.log(data);
    useEffect(() => {
       setClickedItems(JSON.parse(localStorage.getItem("clickedItems") || "[]"));
    }, []);
