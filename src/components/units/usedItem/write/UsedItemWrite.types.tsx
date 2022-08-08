@@ -17,6 +17,7 @@ export interface IUsedItemWriteUI {
 export interface IBoardWrite {
    isEdit: boolean;
    boardData?: any;
+   usedItemData?: any;
 }
 
 export interface IMyvariables {
