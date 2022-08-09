@@ -7,6 +7,7 @@ const nextConfig = {
          destination: "/pages/api/privacy.policy.js",
       },
    ],
+   generateBuildId: () => "mhyeo",
 };
 
 module.exports = nextConfig;
