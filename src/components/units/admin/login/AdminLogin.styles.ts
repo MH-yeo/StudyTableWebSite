@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Button, Input } from "antd";
+import { breakPoints } from "../../../../commons/styles/Media";
 
 export const Wrapper = styled.div`
    position: absolute;
@@ -9,7 +10,6 @@ export const Wrapper = styled.div`
    left: 0;
    margin: auto;
    height: 460px;
-   min-width: 320px;
    max-width: 450px;
 `;
 
@@ -17,6 +17,9 @@ export const Logo = styled.img`
    width: 100%;
    margin-bottom: 40px;
    cursor: pointer;
+   @media ${breakPoints.mobile} {
+      margin: 0px 20px;
+   }
 `;
 export const MyInputWrapper = styled.div`
    padding: 20px 0px;
@@ -26,23 +29,36 @@ export const MyInputID = styled(Input)`
    height: 54px;
    padding: 24px 24px;
    border-radius: 8px 8px 0px 0px;
+   @media ${breakPoints.mobile} {
+      margin: 0px 20px;
+   }
 `;
 export const MyInputPassWord = styled(Input)`
    height: 54px;
    padding: 24px 24px;
    border-radius: 0px 0px 8px 8px;
+   @media ${breakPoints.mobile} {
+      margin: 0px 20px;
+   }
 `;
 
 export const MyButton = styled(Button)`
    width: 100%;
    height: 70px;
    font-size: 20px;
+   @media ${breakPoints.mobile} {
+      margin: 0px 20px;
+   }
 `;
 
 export const AuthFindWrapper = styled.div`
+   width: 100%;
    color: #878d91;
    text-align: center;
    padding-top: 15px;
+   @media ${breakPoints.mobile} {
+      margin-left: 20px;
+   }
 `;
 
 export const AuthFindID = styled.span`

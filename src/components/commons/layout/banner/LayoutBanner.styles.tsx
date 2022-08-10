@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/Media";
 
 export const settings = {
    dots: false,
@@ -6,7 +7,6 @@ export const settings = {
    speed: 500,
    slidesToShow: 1,
    slidesToScroll: 1,
-   // autoplay: true,
 };
 export const Wrapper = styled.div``;
 export const BannerBackGround = styled.div`
@@ -23,6 +23,11 @@ export const TextWrapper = styled.div`
    margin-left: 18%;
    background-color: #333333c0;
    padding: 10px;
+   @media ${breakPoints.mobile} {
+      margin-top: 30%;
+      margin-left: 0;
+      width: 100%;
+   }
 `;
 export const MainP = styled.h2`
    margin: 0;

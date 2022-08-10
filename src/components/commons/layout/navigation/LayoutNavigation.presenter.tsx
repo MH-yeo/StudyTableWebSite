@@ -1,3 +1,4 @@
+import { SideBarMenu } from "../../sidebarmenu/SideBarMenu";
 import * as S from "./LayoutNavigation.styles";
 
 export default function LayoutNavigationUI(props) {
@@ -24,37 +25,48 @@ export default function LayoutNavigationUI(props) {
                   </S.CommunityWrapper>
                )}
             </S.BannerLeft>
-
-            <S.BannerMenu navColor={props.navColor}>
-               <S.Mydiv
-                  onClick={props.onClickToPricing}
-                  navColor={props.navColor}
-               >
-                  이용안내
-               </S.Mydiv>
-               {!props.accessToken && (
+            {props.isMobile ? (
+               <>
+                  <S.MenuWrapper>
+                     <S.MenuIcon
+                        navColor={props.navColor}
+                        onClick={() => props.setIsClickMenu((prev) => !prev)}
+                     />
+                  </S.MenuWrapper>
+               </>
+            ) : (
+               <S.BannerMenu navColor={props.navColor}>
                   <S.Mydiv
-                     onClick={props.onClickToAdminLogin}
+                     onClick={props.onClickToPricing}
                      navColor={props.navColor}
                   >
-                     점주님 로그인
+                     이용안내
                   </S.Mydiv>
-               )}
-               {props.accessToken && (
+                  {!props.accessToken && (
+                     <S.Mydiv
+                        onClick={props.onClickToAdminLogin}
+                        navColor={props.navColor}
+                     >
+                        점주님 로그인
+                     </S.Mydiv>
+                  )}
+                  {props.accessToken && (
+                     <S.Mydiv
+                        navColor={props.navColor}
+                        onClick={props.onClickToMyPage}
+                     >
+                        마이 페이지
+                     </S.Mydiv>
+                  )}
                   <S.Mydiv
                      navColor={props.navColor}
-                     onClick={props.onClickToMyPage}
+                     onClick={props.onClickFormButton}
                   >
-                     마이 페이지
+                     상담문의
                   </S.Mydiv>
-               )}
-               <S.Mydiv
-                  navColor={props.navColor}
-                  onClick={props.onClickFormButton}
-               >
-                  상담문의
-               </S.Mydiv>
-            </S.BannerMenu>
+               </S.BannerMenu>
+            )}
+            {props.isClickMenu && <SideBarMenu ref={props.el} />}
          </S.BannerNav>
       </>
    );

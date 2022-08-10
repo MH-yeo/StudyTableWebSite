@@ -1,13 +1,17 @@
 import styled from "@emotion/styled/";
 import { Button } from "antd";
 import { MailOutlined } from "@ant-design/icons";
+import { breakPoints } from "../../../../commons/styles/Media";
 
 export const Wrapper = styled.div`
    padding: 120px 0px;
    margin: auto;
    min-height: 1200px;
-   min-width: 320px;
    max-width: 450px;
+   width: 100%;
+   @media ${breakPoints.mobile} {
+      padding: 120px 20px;
+   }
 `;
 export const Title = styled.h2`
    width: 100%;
@@ -60,6 +64,9 @@ export const Information = styled.div`
    text-align: center;
    padding-top: 15px;
    margin-bottom: 15px;
+   @media ${breakPoints.mobile} {
+      font-size: 12px;
+   }
 `;
 export const FormWrapper = styled.div`
    font-size: 16px;

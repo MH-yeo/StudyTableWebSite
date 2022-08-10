@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Button, Input } from "antd";
+import { breakPoints } from "../../../../../commons/styles/Media";
 
 export const Section = styled.section`
    width: 100%;
@@ -8,11 +9,17 @@ export const Section = styled.section`
    justify-content: center;
    background-color: #e9e9e9;
    padding: 80px 0px;
+   @media ${breakPoints.mobile} {
+      flex-direction: column;
+   }
 `;
 export const TextWrapper = styled.div`
    display: flex;
    flex-direction: column;
    margin-right: 50px;
+   @media ${breakPoints.mobile} {
+      padding: 0px 20px;
+   }
 `;
 
 export const MainP = styled.h2`
@@ -20,6 +27,9 @@ export const MainP = styled.h2`
    line-height: 60px;
    font-weight: bold;
    margin-bottom: 50px;
+   @media ${breakPoints.mobile} {
+      margin-bottom: 25px;
+   }
 `;
 
 export const Context = styled.p`
@@ -28,8 +38,14 @@ export const Context = styled.p`
    font-size: 24px;
    color: #363a3c;
 `;
-export const InputGroup = styled.div``;
+export const InputGroup = styled.div`
+   width: 100%;
+   @media ${breakPoints.mobile} {
+      padding: 0px 20px;
+   }
+`;
 export const InputWrapper = styled.div`
+   width: 100%;
    position: relative;
    display: flex;
    flex-direction: column;
@@ -40,6 +56,9 @@ export const InputBox = styled(Input)`
    border-radius: 5px;
    margin-bottom: 15px;
    padding: 30px 0px 10px 24px;
+   @media ${breakPoints.mobile} {
+      width: 100%;
+   }
 `;
 export const Label = styled.label`
    position: absolute;
@@ -97,4 +116,7 @@ export const SubmitButton = styled(Button)`
    height: 60px;
    border-radius: 5px;
    background-color: #00a1ff;
+   @media ${breakPoints.mobile} {
+      width: 350px;
+   }
 `;

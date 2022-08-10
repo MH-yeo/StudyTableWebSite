@@ -1,4 +1,6 @@
+import { MenuOutlined } from "@ant-design/icons";
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/Media";
 
 export const BannerNav = styled.nav<{ navColor: boolean }>`
    position: fixed;
@@ -15,11 +17,16 @@ export const BannerNav = styled.nav<{ navColor: boolean }>`
    justify-content: space-between;
    align-items: center;
    z-index: 999;
+   @media ${breakPoints.mobile} {
+      padding: 0px;
+   }
 `;
+
 export const BannerLeft = styled.div`
    display: flex;
    align-items: center;
 `;
+
 export const CommunityWrapper = styled.div<{ navColor: boolean }>`
    width: 133px;
    height: 20px;
@@ -27,6 +34,7 @@ export const CommunityWrapper = styled.div<{ navColor: boolean }>`
    display: flex;
    align-items: center;
 `;
+
 export const BannerMenu = styled.div<{ navColor: boolean }>`
    width: 400px;
    height: 20px;
@@ -35,10 +43,15 @@ export const BannerMenu = styled.div<{ navColor: boolean }>`
    justify-content: center;
    align-items: center;
 `;
+
 export const Logo = styled.img`
    width: 200px;
    cursor: pointer;
+   @media ${breakPoints.mobile} {
+      padding: 10px 5px;
+   }
 `;
+
 export const Mydiv = styled.div<{ navColor: boolean }>`
    position: relative;
    width: 100%;
@@ -62,4 +75,15 @@ export const Mydiv = styled.div<{ navColor: boolean }>`
       transform: scaleX(1);
       transform-origin: bottom left;
    }
+`;
+
+export const MenuIcon = styled(MenuOutlined)<{ navColor: boolean }>`
+   font-size: 28px;
+   color: ${(props) => (props.navColor ? "#ffffff" : "#363a3c")};
+   margin-right: 20px;
+`;
+
+export const MenuWrapper = styled.div`
+   position: absolute;
+   right: 0;
 `;

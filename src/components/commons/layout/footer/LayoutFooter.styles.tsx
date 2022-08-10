@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/Media";
 
 export const Wrapper = styled.div`
    width: 100%;
@@ -16,9 +17,15 @@ export const TextWrapper = styled.div`
    justify-content: center;
    align-items: center;
    margin-bottom: 15px;
+   @media ${breakPoints.mobile} {
+      width: 90%;
+   }
 `;
 export const Mydiv = styled.div`
    cursor: pointer;
+   @media ${breakPoints.mobile} {
+      font-size: 12px;
+   }
 `;
 export const GraySectionLine = styled.div`
    height: 15px;
