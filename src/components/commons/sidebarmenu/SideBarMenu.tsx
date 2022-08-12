@@ -1,6 +1,6 @@
-import { CloseOutlined } from "@ant-design/icons";
-import styled from "@emotion/styled";
 import Link from "next/link";
+import styled from "@emotion/styled";
+import { CloseOutlined } from "@ant-design/icons";
 
 const Background = styled.div`
    position: fixed;

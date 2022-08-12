@@ -1,7 +1,7 @@
-import styled from "@emotion/styled/";
 import { Button } from "antd";
 import { MailOutlined } from "@ant-design/icons";
 import { breakPoints } from "../../../../commons/styles/Media";
+import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
    padding: 120px 0px;

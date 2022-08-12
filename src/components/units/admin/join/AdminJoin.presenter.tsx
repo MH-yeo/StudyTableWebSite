@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Controller } from "react-hook-form";
 import { phoneNumHypen } from "../../../../commons/utilities/phonNumHypen";
 import ButtonSubmit02 from "../../../commons/buttons/submit02/ButtonSubmit02";
@@ -23,8 +24,10 @@ export default function AdminJoinUI(props) {
          </S.MyButtonEmailStart>
          <S.Information>
             버튼을 눌러 가입시 <a href="">이용약관</a>과
-            <a href="/info/privacy.policy.html"> 개인정보처리방침</a>에
-            동의합니다.
+            <Link href="/info/privacy.policy.html">
+               <a> 개인정보처리방침</a>
+            </Link>
+            에 동의합니다.
          </S.Information>
          <S.FormWrapper>
             <form>
