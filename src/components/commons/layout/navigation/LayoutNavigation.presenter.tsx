@@ -1,4 +1,4 @@
-import { SideBarMenu } from "../../sidebarmenu/SideBarMenu";
+import SideBarMenu from "../../sidebarmenu/SideBarMenu";
 import * as S from "./LayoutNavigation.styles";
 
 export default function LayoutNavigationUI(props) {
@@ -29,10 +29,17 @@ export default function LayoutNavigationUI(props) {
                <>
                   <S.MenuWrapper>
                      <S.MenuIcon
+                        ref={props.iconRef}
                         navColor={props.navColor}
-                        onClick={() => props.setIsClickMenu((prev) => !prev)}
+                        onClick={props.onClickOpenSideMenu}
                      />
                   </S.MenuWrapper>
+                  {props.isClickMenu && (
+                     <SideBarMenu
+                        menuRef={props.menuRef}
+                        setIsClickMenu={props.setIsClickMenu}
+                     />
+                  )}
                </>
             ) : (
                <S.BannerMenu navColor={props.navColor}>
@@ -66,7 +73,6 @@ export default function LayoutNavigationUI(props) {
                   </S.Mydiv>
                </S.BannerMenu>
             )}
-            {props.isClickMenu && <SideBarMenu ref={props.el} />}
          </S.BannerNav>
       </>
    );

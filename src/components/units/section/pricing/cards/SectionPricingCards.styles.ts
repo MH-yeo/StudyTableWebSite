@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Button } from "antd";
+import { breakPoints } from "../../../../../commons/styles/Media";
 
 export const Section = styled.section`
    display: flex;
@@ -33,6 +34,9 @@ export const Header = styled.h2`
    font-weight: bold;
    text-align: center;
    margin-bottom: 40px;
+   @media ${breakPoints.mobile} {
+      font-size: 32px;
+   }
 `;
 export const Cards = styled.div``;
 
@@ -50,6 +54,10 @@ export const CardElement = styled.div`
       margin-bottom: 17px;
       box-shadow: 0 5px 20px rgb(41 42 43 / 10%);
    }
+   @media ${breakPoints.mobile} {
+      width: 100%;
+      height: 150px;
+   }
 `;
 
 export const CardHeader1 = styled.div`
@@ -57,18 +65,27 @@ export const CardHeader1 = styled.div`
    background-color: #00a1ff;
    border-radius: 10px 0px 0px 10px;
    padding: 16px 24px;
+   @media ${breakPoints.mobile} {
+      padding: 16px 0px 16px 24px;
+   }
 `;
 export const CardHeader2 = styled.div`
    width: 40%;
    background-color: #09b8cb;
    border-radius: 10px 0px 0px 10px;
    padding: 16px 24px;
+   @media ${breakPoints.mobile} {
+      padding: 16px 0px 16px 24px;
+   }
 `;
 export const CardHeader3 = styled.div`
    width: 40%;
    background-color: #18ba9a;
    border-radius: 10px 0px 0px 10px;
    padding: 16px 24px;
+   @media ${breakPoints.mobile} {
+      padding: 16px 0px 16px 24px;
+   }
 `;
 export const CardBody = styled.div`
    width: 60%;
@@ -79,6 +96,9 @@ export const CardBody = styled.div`
 export const Title = styled.div`
    font-size: 22px;
    color: #ffffff;
+   @media ${breakPoints.mobile} {
+      font-size: 16px;
+   }
 `;
 export const Period = styled.div`
    font-size: 22px;
@@ -88,6 +108,9 @@ export const Period = styled.div`
 export const OriginalCost = styled.div`
    color: #878d91;
    font-size: 15px;
+   @media ${breakPoints.mobile} {
+      font-size: 10px;
+   }
 `;
 export const DiscountedCost = styled.div`
    font-size: 22px;
@@ -95,14 +118,23 @@ export const DiscountedCost = styled.div`
 `;
 export const HighLightSpan = styled.span`
    color: #00a1ff;
+   @media ${breakPoints.mobile} {
+      font-size: 14px;
+   }
 `;
 export const NomalSpan = styled.span`
    color: #363a3c;
+   @media ${breakPoints.mobile} {
+      font-size: 14px;
+   }
 `;
 
 export const Benefit = styled.div`
    color: #878d91;
    font-size: 16px;
+   @media ${breakPoints.mobile} {
+      font-size: 10px;
+   }
 `;
 export const ToFormButton = styled(Button)`
    font-size: 16px;
@@ -113,6 +145,12 @@ export const ToFormButton = styled(Button)`
    border: 1px solid #d9d9d9;
    border-radius: 5px;
    justify-content: flex-end;
+   @media ${breakPoints.mobile} {
+      font-size: 10px;
+      width: 75px;
+      height: 28px;
+      margin-top: 10px;
+   }
 `;
 
 export const Footer = styled.div``;

@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../../commons/styles/Media";
 
 export const Section = styled.section`
    padding-bottom: 80px;
@@ -15,4 +16,7 @@ export const Header = styled.h2`
    font-weight: bold;
    padding: 60px 0px 40px 0px;
    border-top: 1px solid #e1e4e6;
+   @media ${breakPoints.mobile} {
+      font-size: 28px;
+   }
 `;
