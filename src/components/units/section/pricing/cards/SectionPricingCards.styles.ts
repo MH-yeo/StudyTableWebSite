@@ -66,7 +66,7 @@ export const CardHeader1 = styled.div`
    border-radius: 10px 0px 0px 10px;
    padding: 16px 24px;
    @media ${breakPoints.mobile} {
-      padding: 16px 0px 16px 24px;
+      padding: 16px 0px 16px 16px;
    }
 `;
 export const CardHeader2 = styled.div`
@@ -75,7 +75,7 @@ export const CardHeader2 = styled.div`
    border-radius: 10px 0px 0px 10px;
    padding: 16px 24px;
    @media ${breakPoints.mobile} {
-      padding: 16px 0px 16px 24px;
+      padding: 16px 0px 16px 16px;
    }
 `;
 export const CardHeader3 = styled.div`
@@ -84,7 +84,7 @@ export const CardHeader3 = styled.div`
    border-radius: 10px 0px 0px 10px;
    padding: 16px 24px;
    @media ${breakPoints.mobile} {
-      padding: 16px 0px 16px 24px;
+      padding: 16px 0px 16px 16px;
    }
 `;
 export const CardBody = styled.div`
@@ -97,7 +97,7 @@ export const Title = styled.div`
    font-size: 22px;
    color: #ffffff;
    @media ${breakPoints.mobile} {
-      font-size: 16px;
+      font-size: 0.85rem;
    }
 `;
 export const Period = styled.div`

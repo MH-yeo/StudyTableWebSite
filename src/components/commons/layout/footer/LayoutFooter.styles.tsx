@@ -24,7 +24,7 @@ export const TextWrapper = styled.div`
 export const Mydiv = styled.div`
    cursor: pointer;
    @media ${breakPoints.mobile} {
-      font-size: 12px;
+      font-size: 0.6rem;
    }
 `;
 export const GraySectionLine = styled.div`

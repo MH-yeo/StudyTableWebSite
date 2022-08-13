@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { LeftOutlined } from "@ant-design/icons";
+import { breakPoints } from "../../../commons/styles/Media";
 
 export const FaqWrapper = styled.div`
    display: flex;
@@ -23,6 +24,9 @@ export const Myh4 = styled.h4<{ toggle: boolean }>`
    margin-bottom: 0px;
    padding: 16px 0px;
    font-weight: ${(props) => (props.toggle ? "bold" : "500")};
+   @media ${breakPoints.mobile} {
+      font-size: 1.2rem;
+   }
 `;
 
 export const LeftArrow = styled(LeftOutlined)<{ toggle: boolean }>`

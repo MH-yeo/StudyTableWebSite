@@ -17,6 +17,6 @@ export const Header = styled.h2`
    padding: 60px 0px 40px 0px;
    border-top: 1px solid #e1e4e6;
    @media ${breakPoints.mobile} {
-      font-size: 28px;
+      font-size: 1.6rem;
    }
 `;

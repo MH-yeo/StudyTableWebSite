@@ -40,6 +40,9 @@ export const SubP = styled.p`
    font-size: 17px;
    line-height: 30px;
    color: #ffffff;
+   @media ${breakPoints.mobile} {
+      font-size: 1rem;
+   }
 `;
 export const GraySectionLine = styled.div`
    height: 15px;

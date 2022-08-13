@@ -15,6 +15,7 @@ export const Section = styled.section`
 `;
 export const TextWrapper = styled.div`
    display: flex;
+   width: 100%;
    flex-direction: column;
    margin-right: 50px;
    @media ${breakPoints.mobile} {
@@ -33,10 +34,13 @@ export const MainP = styled.h2`
 `;
 
 export const Context = styled.p`
-   max-width: 400px;
    line-height: 36px;
    font-size: 24px;
    color: #363a3c;
+   @media ${breakPoints.mobile} {
+      font-size: 0.9rem;
+      line-height: 1.5rem;
+   }
 `;
 export const InputGroup = styled.div`
    width: 100%;

@@ -70,8 +70,8 @@ export const Context = styled.p`
    font-size: 24px;
    color: #363a3c;
    @media ${breakPoints.mobile} {
-      line-height: 20px;
-      font-size: 18px;
+      line-height: 2rem;
+      font-size: 1.1rem;
       display: flex;
       padding: 0px 20px;
    }
