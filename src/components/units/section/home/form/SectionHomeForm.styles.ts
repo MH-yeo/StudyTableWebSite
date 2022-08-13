@@ -15,10 +15,10 @@ export const Section = styled.section`
 `;
 export const TextWrapper = styled.div`
    display: flex;
-   width: 100%;
    flex-direction: column;
    margin-right: 50px;
    @media ${breakPoints.mobile} {
+      width: 100%;
       padding: 0px 20px;
    }
 `;
