@@ -47,8 +47,8 @@ export default function AdminJoinUI(props) {
                   </S.EmailText>
                   {!props.next && (
                      <ButtonSubmit02
-                        title={"다음"}
-                        type={"button"}
+                        title="다음"
+                        type="button"
                         onClick={props.onClickNext}
                         disabled={!props.isValidEmail}
                      />
@@ -107,6 +107,7 @@ export default function AdminJoinUI(props) {
                   <S.ErrorText>
                      {props.formState.errors.passwordAgain?.message}
                   </S.ErrorText>
+                  f
                   {props.next && (
                      <ButtonSubmit02
                         title={"가입 신청"}

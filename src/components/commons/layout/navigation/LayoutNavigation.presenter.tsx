@@ -1,7 +1,25 @@
+import { Dispatch, Ref, SetStateAction } from "react";
 import SideBarMenu from "../../sidebarmenu/SideBarMenu";
 import * as S from "./LayoutNavigation.styles";
 
-export default function LayoutNavigationUI(props) {
+interface IProps {
+   accessToken: string;
+   navColor: boolean;
+   isMobile: boolean;
+   isClickMenu: boolean;
+   iconRef: Ref<HTMLSpanElement>;
+   menuRef: Ref<HTMLDivElement>;
+   onClickToHome: () => void;
+   onClickToCommunity: () => void;
+   onClickOpenSideMenu: () => void;
+   onClickToPricing: () => void;
+   onClickToAdminLogin: () => void;
+   onClickToMyPage: () => void;
+   onClickFormButton: () => void;
+   setIsClickMenu: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function LayoutNavigationUI(props: IProps) {
    return (
       <>
          <S.BannerNav navColor={props.navColor}>

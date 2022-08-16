@@ -4,7 +4,11 @@ import { useRecoilState } from "recoil";
 import { accessTokenState } from "../../../../commons/store";
 import LayoutNavigationUI from "./LayoutNavigation.presenter";
 
-export default function LayoutNavigation(props) {
+interface IProps {
+   navColor: boolean;
+}
+
+export default function LayoutNavigation(props: IProps) {
    const menuRef = useRef<HTMLDivElement>(null);
    const iconRef = useRef<HTMLDivElement>(null);
    const router = useRouter();
@@ -42,11 +46,11 @@ export default function LayoutNavigation(props) {
       };
    }, []);
 
-   const handleCloseSideBarMenu = ({ target }) => {
+   const handleCloseSideBarMenu = ({ target }: MouseEvent) => {
       if (
          myStateRef.current &&
-         !menuRef.current?.contains(target) &&
-         !iconRef.current?.contains(target)
+         !menuRef.current?.contains(target as Node) &&
+         !iconRef.current?.contains(target as Node)
       )
          setIsClickMenu(false);
    };

@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Collapse1UI from "./Collapse1.presenter";
 
-export default function Collapse1(props) {
+interface IProps {
+   title: string;
+   context: string;
+}
+
+export default function Collapse1(props: IProps) {
    const [toggle, setToggle] = useState(false);
 
    const onClickSetToggle = () => {

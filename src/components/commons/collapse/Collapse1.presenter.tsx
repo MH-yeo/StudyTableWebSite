@@ -1,6 +1,13 @@
 import * as S from "./Collapse1.styles";
 
-export default function Collapse1UI(props) {
+interface IProps {
+   toggle: boolean;
+   title: string;
+   context: string;
+   onClickSetToggle: () => void;
+}
+
+export default function Collapse1UI(props: IProps) {
    return (
       <>
          <S.FaqWrapper onClick={props.onClickSetToggle}>

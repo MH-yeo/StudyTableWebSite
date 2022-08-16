@@ -25,7 +25,11 @@ const PlusIcon = styled.div`
    align-items: center;
 `;
 
-export default function ButtonImageUpload01({ onClickImage }) {
+interface IProps {
+   onClickImage: () => void;
+}
+
+export default function ButtonImageUpload01({ onClickImage }: IProps) {
    return (
       <MyUploadButton onClick={onClickImage}>
          <PlusIcon>

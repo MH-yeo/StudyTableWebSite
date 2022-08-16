@@ -10,7 +10,19 @@ const MyButton = styled(Button)`
    margin-top: 40px;
 `;
 
-export default function ButtonSubmit02({ title, type, onClick, disabled }) {
+interface IProps {
+   title: string;
+   type: "button" | "submit" | "reset" | undefined;
+   disabled: boolean;
+   onClick: () => void;
+}
+
+export default function ButtonSubmit02({
+   title,
+   type,
+   onClick,
+   disabled,
+}: IProps) {
    return (
       <MyButton
          type="primary"

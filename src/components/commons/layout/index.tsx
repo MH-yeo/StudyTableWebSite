@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import LayoutBanner from "./banner/LayoutBanner.container";
 import LayoutFooter from "./footer/LayoutFooter.container";
 import LayoutNavigation from "./navigation/LayoutNavigation.container";
@@ -8,7 +8,11 @@ const HIDDEN_BANNERS = ["/admin/login", "/admin/join", "/pricing"];
 const HIDDEN_FOOTER = ["/admin/login"];
 const HIDDEN_NAVIGATION = ["/admin/login"];
 
-export default function Layout(props) {
+interface IProps {
+   children?: ReactNode;
+}
+
+export default function Layout(props: IProps) {
    const router = useRouter();
    const [navColor, setNavColor] = useState(true);
 

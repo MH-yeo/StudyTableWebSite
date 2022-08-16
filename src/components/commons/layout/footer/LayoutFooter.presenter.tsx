@@ -1,6 +1,10 @@
 import * as S from "./LayoutFooter.styles";
 
-export default function LayoutFooterUI(props) {
+interface IProps {
+   onClickToPrivacyPolicy: () => void;
+}
+
+export default function LayoutFooterUI(props: IProps) {
    return (
       <>
          <S.Wrapper>

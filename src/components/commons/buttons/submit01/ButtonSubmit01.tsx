@@ -10,7 +10,13 @@ const MyButton = styled(Button)`
    background-color: #00a1ff;
 `;
 
-export default function ButtonSubmit01({ title, disabled, width }) {
+interface IProps {
+   title: string;
+   disabled: boolean;
+   width: string;
+}
+
+export default function ButtonSubmit01({ title, disabled, width }: IProps) {
    return (
       <MyButton
          htmlType="submit"

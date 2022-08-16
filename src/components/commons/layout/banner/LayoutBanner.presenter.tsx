@@ -1,6 +1,10 @@
 import * as S from "./LayoutBanner.styles";
 
-export default function LayoutBannerUI(props) {
+interface IProps {
+   isMobile: boolean;
+}
+
+export default function LayoutBannerUI(props: IProps) {
    return (
       <>
          <S.Wrapper>
